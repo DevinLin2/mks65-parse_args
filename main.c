@@ -1,12 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <dirent.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <errno.h>
 #include <string.h>
 #include <unistd.h>
+
+char ** parse_args( char * line );
 
 int main(int argc, char *argv[]) {
   char line[100];

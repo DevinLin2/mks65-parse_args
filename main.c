@@ -11,14 +11,16 @@ int main(int argc, char *argv[]) {
   strcat(line, " ");
   for(int i = 2; i < argc; i++) {
     strcat(line, argv[i]);
-    strcat(line, " ");
+    if (i + 1 != argc) {
+      strcat(line, " ");
+    }
   }
   // printf("%s\n", line);
   char ** args = parse_args(line);
-  printf("%s\n", args[0]);
-  for (int i = 1; args[i] != 0; i++) {
-    printf("%s\n", args[i]);
-  }
+  // printf("%s\n", args[0]);
+  // for (int i = 1; args[i] != 0; i++) {
+  //   printf("%s\n", args[i]);
+  // }
   execvp(args[0], args);
   // printf("%d", argc);
   return 0;

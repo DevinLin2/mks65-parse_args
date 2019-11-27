@@ -16,7 +16,9 @@ int main(int argc, char *argv[]) {
   // printf("%s\n", line);
   char ** args = parse_args(line);
   printf("%s\n", args[0]);
-  printf("%s\n", args);
+  for (int i = 1; args[i] != 0; i++) {
+    printf("%s\n", args[i]);
+  }
   execvp(args[0], args);
   // printf("%d", argc);
   return 0;
